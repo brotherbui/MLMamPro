@@ -6,10 +6,13 @@ Yellow='\033[0;33m'       # Yellow
 
 echo "1. Brew installation"
 
+ARCH=$(arch)
 if test ! $(which brew); then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-  eval "$(/opt/homebrew/bin/brew shellenv)"
+  if [ "$ARCH" == "arm64" ]; then #this is for M1
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  fi
 
   brew doctor
 else
