@@ -1,0 +1,31 @@
+plugins=(git zsh-completions zsh-autosuggestions zsh-syntax-highlighting)
+
+#autoload -U compinit && compinit
+
+export PATH="/opt/homebrew/sbin:/usr/local/sbin:$PATH"
+
+export HOMEBREW_NO_ANALYTICS=1
+
+
+alias a.s='sh /Users/current_user/mlmampro/scripts/apache.sh start'
+alias a.o='sh /Users/current_user/mlmampro/scripts/apache.sh stop'
+alias a.r='sh /Users/current_user/mlmampro/scripts/apache.sh restart'
+
+alias m.s='brew services start mariadb'
+alias m.o='brew services stop mariadb'
+alias m.r='brew services restart mariadb'
+
+alias a.conf='sh /Users/current_user/mlmampro/scripts/open-config.sh httpd'
+alias v.conf='sh /Users/current_user/mlmampro/scripts/open-config.sh vhosts'
+
+alias x='sh /Users/current_user/mlmampro/scripts/php-xdebug.sh'
+alias x.d='sh /Users/current_user/mlmampro/scripts/php-xdebug.sh d'
+alias x.e='sh /Users/current_user/mlmampro/scripts/php-xdebug.sh e'
+
+alias o='sh /Users/current_user/mlmampro/scripts/php-opcache.sh'
+alias o.d='sh /Users/current_user/mlmampro/scripts/php-opcache.sh d'
+alias o.e='sh /Users/current_user/mlmampro/scripts/php-opcache.sh e'
+
+alias dump='sh /Users/current_user/mlmampro/scripts/mariadb-export.sh'
+alias dbexport='sh /Users/current_user/mlmampro/scripts/mariadb-export.sh'
+alias dbimport='sh /Users/current_user/mlmampro/scripts/mariadb-import.sh'
