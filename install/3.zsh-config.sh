@@ -10,7 +10,6 @@ echo "3. Oh-My-Zsh config and plugins installation"
 if [ -f ~/.oh-my-zsh/README.md ]; then
   echo "$Green"
   echo "Updating zsh config...$Color_Off"
-  compaudit | xargs chmod g-w,o-w
 
   if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-completions ]; then
     echo "$Green"
