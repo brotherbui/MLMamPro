@@ -9,7 +9,7 @@ Yellow='\033[0;33m'       # Yellow
 
 BREW_PREFIX=$(brew --prefix)
 
-echo "5. Install Composer, PHP, xDebug and process config files"
+echo "3. Install Composer, PHP, xDebug and process config files"
 if test $(which brew); then
   if [ ! -f $BREW_PREFIX/bin/composer ]; then
     brew install composer
