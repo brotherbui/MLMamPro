@@ -8,7 +8,7 @@ if test $(which git); then
   sh ~/mlmampro/install/3.php.sh
   sh ~/mlmampro/install/4.mariadb.sh
   sh ~/mlmampro/install/5.ohmyzsh.sh
-  sh ~/mlmampro/install/6.zsh-config.sh
+ 
   
 else
   echo "Please complete the Command Line Tools installation first by running this command in Terminal: git"
