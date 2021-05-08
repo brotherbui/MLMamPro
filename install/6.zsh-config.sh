@@ -35,14 +35,14 @@ if [ -f ~/.oh-my-zsh/README.md ]; then
     if [ ! -f ~/.oh-my-zsh/custom/develop.zsh ]; then
       echo "$Green"
       echo "Linking config...$Color_Off"
-      cp -rfv /Users/$CURRENT_USER/mlmampro/config/develop.zsh /Users/$CURRENT_USER/mlmampro/config/develop.zsh.bak
-      sed -i '' "s|current_user|$CURRENT_USER|g" /Users/$CURRENT_USER/mlmampro/config/develop.zsh
-      mv -v /Users/$CURRENT_USER/mlmampro/config/develop.zsh ~/.oh-my-zsh/custom/develop.zsh
-      mv -v /Users/$CURRENT_USER/mlmampro/config/develop.zsh.bak /Users/$CURRENT_USER/mlmampro/config/develop.zsh
+      cp -rfv ~/mlmampro/config/develop.zsh ~/mlmampro/config/develop.zsh.bak
+      sed -i '' "s|current_user|$CURRENT_USER|g" ~/mlmampro/config/develop.zsh
+      mv -v ~/mlmampro/config/develop.zsh ~/.oh-my-zsh/custom/develop.zsh
+      mv -v ~/mlmampro/config/develop.zsh.bak ~/mlmampro/config/develop.zsh
     fi
   else
     echo "$Red"
-    echo "/Users/$CURRENT_USER/mlmampro/config/develop.zsh is NOT FOUND! $Color_Off"
+    echo "~/mlmampro/config/develop.zsh is NOT FOUND! $Color_Off"
   fi
 
 else
