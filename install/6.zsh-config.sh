@@ -5,6 +5,7 @@ Green='\033[0;32m'        # Green
 Yellow='\033[0;33m'       # Yellow
 
 CURRENT_USER="$(whoami)"
+compaudit | xargs chmod g-w,o-w
 
 echo "6. Oh-My-Zsh config and plugins installation"
 if [ -f ~/.oh-my-zsh/README.md ]; then
