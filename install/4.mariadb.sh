@@ -7,7 +7,7 @@ Yellow='\033[0;33m'       # Yellow
 
 BREW_PREFIX=$(brew --prefix)
 
-echo "6. Install MariaDB"
+echo "4. Install MariaDB"
 if test $(which brew); then
   if [ ! -f $BREW_PREFIX/bin/mariadb ]; then
     brew install mariadb
