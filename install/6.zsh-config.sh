@@ -6,7 +6,7 @@ Yellow='\033[0;33m'       # Yellow
 
 CURRENT_USER="$(whoami)"
 
-echo "3. Oh-My-Zsh config and plugins installation"
+echo "6. Oh-My-Zsh config and plugins installation"
 if [ -f ~/.oh-my-zsh/README.md ]; then
   echo "$Green"
   echo "Updating zsh config...$Color_Off"
