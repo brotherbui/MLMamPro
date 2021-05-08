@@ -9,7 +9,7 @@ Yellow='\033[0;33m'       # Yellow
 BREW_PREFIX=$(brew --prefix)
 mkdir -p /Users/$CURRENT_USER/PHPProjects
 
-echo "4. Dnsmasq and Apache installation"
+echo "2. Dnsmasq and Apache installation"
 if test $(which brew); then
   if [ ! -d "/Applications/Visual Studio Code.app" ]; then
     brew install visual-studio-code
