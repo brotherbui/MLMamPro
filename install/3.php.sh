@@ -24,7 +24,7 @@ if test $(which brew); then
       brew link --force --overwrite php@"$i"
 
       cp $BREW_PREFIX/etc/php/"$i"/php.ini $BREW_PREFIX/etc/php/"$i"/php.ini.bak
-      cp -rf ../config/ext-xdebug.ini $BREW_PREFIX/etc/php/"$i"/conf.d/
+      cp -rf ~/mlmampro/config/ext-xdebug.ini $BREW_PREFIX/etc/php/"$i"/conf.d/
 
       pecl install xdebug
       
