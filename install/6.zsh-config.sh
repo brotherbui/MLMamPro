@@ -29,7 +29,7 @@ if [ -f ~/.oh-my-zsh/README.md ]; then
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
   fi
 
-  CHECKFILE=/Users/$CURRENT_USER/mlmampro/config/develop.zsh
+  CHECKFILE=~/mlmampro/config/develop.zsh
 
   if [ -f "$CHECKFILE" ]; then
     if [ ! -f ~/.oh-my-zsh/custom/develop.zsh ]; then
