@@ -39,8 +39,8 @@ if test $(which brew); then
     mv $BREW_PREFIX/etc/httpd/httpd.conf $BREW_PREFIX/etc/httpd/httpd.conf.bak
     mv $BREW_PREFIX/etc/httpd/extra/httpd-vhosts.conf $BREW_PREFIX/etc/httpd/extra/httpd-vhosts.conf.bak
 
-    cp -rf ../config/httpd.conf $BREW_PREFIX/etc/httpd/httpd.conf
-    cp -rf ../config/httpd-vhosts.conf $BREW_PREFIX/etc/httpd/extra/httpd-vhosts.conf
+    cp -rf ~/mlmampro/config/httpd.conf $BREW_PREFIX/etc/httpd/httpd.conf
+    cp -rf ~/mlmampro/config/httpd-vhosts.conf $BREW_PREFIX/etc/httpd/extra/httpd-vhosts.conf
 
     sed -i '' "s|current_user|$CURRENT_USER|g" $BREW_PREFIX/etc/httpd/httpd.conf
     sed -i '' "s|brew_prefix|$BREW_PREFIX|g" $BREW_PREFIX/etc/httpd/httpd.conf
