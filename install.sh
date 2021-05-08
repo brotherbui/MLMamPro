@@ -1,13 +1,13 @@
-#!/bin/bash
+#!/bin/zsh
 if test $(which git); then
   cd ~
   git clone https://github.com/phongblack/mlmampro.git ~/mlmampro
   
-  zsh ~/mlmampro/install/1.brew.sh
-  zsh ~/mlmampro/install/2.apache.sh
-  zsh ~/mlmampro/install/3.php.sh
-  zsh ~/mlmampro/install/4.mariadb.sh
-  zsh ~/mlmampro/install/5.ohmyzsh.sh
+  /bin/zsh ~/mlmampro/install/1.brew.sh
+  /bin/zsh ~/mlmampro/install/2.apache.sh
+  /bin/zsh ~/mlmampro/install/3.php.sh
+  /bin/zsh ~/mlmampro/install/4.mariadb.sh
+  /bin/zsh ~/mlmampro/install/5.ohmyzsh.sh
   compaudit | xargs chmod g-w
   
 else
