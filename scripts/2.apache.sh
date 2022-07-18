@@ -6,10 +6,9 @@ Red='\033[0;31m'          # Red
 Green='\033[0;32m'        # Green
 Yellow='\033[0;33m'       # Yellow
 
-config_path="mod_php"
 BREW_PREFIX=$(brew --prefix)
 
-echo "6. Dnsmasq and Apache installation"
+echo "2. Dnsmasq and Apache installation"
 if test $(which brew); then
   if [ ! -f $BREW_PREFIX/sbin/dnsmasq ]; then
     echo "$Green"
@@ -37,8 +36,8 @@ if test $(which brew); then
     mv $BREW_PREFIX/etc/httpd/httpd.conf $BREW_PREFIX/etc/httpd/httpd.conf.bak
     mv $BREW_PREFIX/etc/httpd/extra/httpd-vhosts.conf $BREW_PREFIX/etc/httpd/extra/httpd-vhosts.conf.bak
 
-    cp -rf ../config/httpd/$config_path/httpd.conf $BREW_PREFIX/etc/httpd/httpd.conf
-    cp -rf ../config/httpd/$config_path/httpd-vhosts.conf $BREW_PREFIX/etc/httpd/extra/httpd-vhosts.conf
+    cp -rf ../config/httpd/httpd.conf $BREW_PREFIX/etc/httpd/httpd.conf
+    cp -rf ../config/httpd/httpd-vhosts.conf $BREW_PREFIX/etc/httpd/extra/httpd-vhosts.conf
 
     sed -i '' "s/currentuser/$current_user/g" $BREW_PREFIX/etc/httpd/httpd.conf
     sed -i '' "s#brew_prefix#$BREW_PREFIX#g" $BREW_PREFIX/etc/httpd/httpd.conf
