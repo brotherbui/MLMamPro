@@ -1,4 +1,5 @@
 #!/bin/sh
+current_user="$(whoami)"
 
 Color_Off='\033[0m'       # Text Reset
 Red='\033[0;31m'          # Red
@@ -7,7 +8,9 @@ Yellow='\033[0;33m'       # Yellow
 
 BREW_PREFIX=$(brew --prefix)
 
-echo "4. Install MariaDB"
+
+
+echo "8. Install MariaDB"
 if test $(which brew); then
   if [ ! -f $BREW_PREFIX/bin/mariadb ]; then
     brew install mariadb
@@ -16,6 +19,22 @@ if test $(which brew); then
     sudo $BREW_PREFIX/bin/mariadb-secure-installation
   fi
   
+  echo "$Yellow"
+  echo "Reset root password in case of any error$Color_Off"
+  echo "$Red"
+  echo "brew services stop mariadb"
+  echo "mysqld --skip-grant-tables --user=mysql &"
+  echo "$Color_Off"
+  echo "$Yellow"
+  echo "Now open another Terminal windows and connect to mariadb$Color_Off"
+  echo "$Red"
+  echo "mysql"
+  echo "> FLUSH PRIVILEGES;"
+  echo "> ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';" # Change password to 'root'
+  echo "> exit"
+  echo "brew services restart mariadb" 
+  echo "$Color_Off"
+
   echo "$Yellow"
   echo "Run the following commands to fix default root password$Color_Off"
   echo "$Red"
@@ -32,8 +51,10 @@ if test $(which brew); then
   echo "> FLUSH PRIVILEGES;"
   echo "> exit"
   echo "brew services restart mariadb"
-  echo "$Color_Off"
 
+  if [ ! -d "/Applications/Sequel Ace.app" ]; then
+    brew install sequel-ace
+  fi
 else
   echo "$Red"
   echo "Homebrew is NOT installed! Exit now. $Color_Off"
