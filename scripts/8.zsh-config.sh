@@ -5,7 +5,7 @@ Green='\033[0;32m'        # Green
 Yellow='\033[0;33m'       # Yellow
 
 
-echo "4. Oh-My-Zsh config and plugins installation"
+echo "8. Oh-My-Zsh config and plugins installation"
 if [ -f ~/.oh-my-zsh/README.md ]; then
   echo "$Green"
   echo "Updating zsh config...$Color_Off"

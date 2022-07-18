@@ -27,7 +27,7 @@ install_mongo()
   pecl install mongodb
 }
 
-echo "7. Install Composer, PHP, N98-Magerun, xDebug and process config files"
+echo "3. Install Composer, PHP, N98-Magerun, xDebug and process config files"
 if test $(which brew); then
   COMPOSER="yes"
   brew install php@"$onlyone"

@@ -10,7 +10,7 @@ BREW_PREFIX=$(brew --prefix)
 
 
 
-echo "8. Install MariaDB"
+echo "4. Install MariaDB"
 if test $(which brew); then
   if [ ! -f $BREW_PREFIX/bin/mariadb ]; then
     brew install mariadb
