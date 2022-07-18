@@ -1,5 +1,4 @@
 #!/bin/sh
-current_user="$(whoami)"
 onlyone="7.4"
 
 Color_Off='\033[0m'       # Text Reset
@@ -27,7 +26,7 @@ install_mongo()
   pecl install mongodb
 }
 
-echo "3. Install Composer, PHP, N98-Magerun, xDebug and process config files"
+echo "7. Install Composer, PHP, N98-Magerun, xDebug and process config files"
 if test $(which brew); then
   COMPOSER="yes"
   brew install php@"$onlyone"
