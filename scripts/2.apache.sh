@@ -42,6 +42,8 @@ if test $(which brew); then
     sed -i '' "s/currentuser/$current_user/g" $BREW_PREFIX/etc/httpd/httpd.conf
     sed -i '' "s#brew_prefix#$BREW_PREFIX#g" $BREW_PREFIX/etc/httpd/httpd.conf
 
+     sed -i '' "s/currentuser/$current_user/g" $BREW_PREFIX/etc/httpd/extra/httpd-vhosts.conf
+
   fi
 
   echo "$Green"
