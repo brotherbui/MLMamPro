@@ -1,3 +1,6 @@
+ZSH_THEME="gruvbox"
+SOLARIZED_THEME="dark"
+
 plugins=(git zsh-completions zsh-autosuggestions zsh-syntax-highlighting)
 
 #autoload -U compinit && compinit
