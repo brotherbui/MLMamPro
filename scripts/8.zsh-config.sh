@@ -39,13 +39,12 @@ if [ -f ~/.oh-my-zsh/README.md ]; then
   CHECKFILE=~/mampro/config/develop.zsh
 
   if [ -f "$CHECKFILE" ]; then
-    if [ ! -f ~/.oh-my-zsh/custom/develop.zsh ]; then
+    if [ ! -f ~/.oh-my-zsh/custom/local.zsh ]; then
       echo "$Green"
       echo "Linking config...$Color_Off"
-      cp -rfv ~/mampro/config/develop.zsh ~/mampro/config/develop.zsh.bak
-      sed -i '' "s|current_user|$CURRENT_USER|g" ~/mampro/config/develop.zsh
-      mv -v ~/mampro/config/develop.zsh ~/.oh-my-zsh/custom/develop.zsh
-      mv -v ~/mampro/config/develop.zsh.bak ~/mampro/config/develop.zsh
+      cp -rfv ~/mampro/config/develop.zsh ~/mampro/config/local.zsh
+      sed -i '' "s|current_user|$CURRENT_USER|g" ~/mampro/config/local.zsh
+      ln -s ~/mampro/config/local.zsh ~/.oh-my-zsh/custom/local.zsh
     fi
   else
     echo "$Red"

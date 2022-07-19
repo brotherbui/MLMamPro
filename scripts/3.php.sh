@@ -34,13 +34,13 @@ if test $(which brew); then
     brew link php@"$onlyone"
       
   pecl install xdebug
-  cp -rf ../config/ext-xdebug.ini $BREW_PREFIX/etc/php/"$onlyone"/conf.d/
+  cp -rf ~/mampro/config/ext-xdebug.ini $BREW_PREFIX/etc/php/"$onlyone"/conf.d/
 
   install_mongo $onlyone
-  cp -rf ../config/ext-mongodb.ini $BREW_PREFIX/etc/php/"$onlyone"/conf.d/
+  cp -rf ~/mampro/config/ext-mongodb.ini $BREW_PREFIX/etc/php/"$onlyone"/conf.d/
 
   pecl install redis
-  cp -rf ../config/ext-redis.ini $BREW_PREFIX/etc/php/"$onlyone"/conf.d/
+  cp -rf ~/mampro/config/ext-redis.ini $BREW_PREFIX/etc/php/"$onlyone"/conf.d/
 
   sed -i '' -e '/extension="redis.so"/d' $BREW_PREFIX/etc/php/"$onlyone"/php.ini
   sed -i '' -e '/extension="mongodb.so"/d' $BREW_PREFIX/etc/php/"$onlyone"/php.ini
