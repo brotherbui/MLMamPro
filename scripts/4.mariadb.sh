@@ -15,6 +15,9 @@ if test $(which brew); then
   if [ ! -f $BREW_PREFIX/bin/mariadb ]; then
     brew install mariadb
     brew services start mariadb
+    #Copy config 
+    mkdir -p $BREW_PREFIX/etc/my.cnf.d/
+    cp -rf ~/mampro/config/mariadb/disable-strict-mode.cnf $BREW_PREFIX/etc/my.cnf.d/
 
     sudo $BREW_PREFIX/bin/mariadb-secure-installation
   fi
