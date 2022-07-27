@@ -5,7 +5,6 @@ plugins=(git zsh-completions zsh-autosuggestions zsh-syntax-highlighting)
 
 #autoload -U compinit && compinit
 
-export PATH="/opt/homebrew/sbin:/usr/local/sbin:$PATH"
 
 export HOMEBREW_NO_ANALYTICS=1
 

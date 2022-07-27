@@ -6,18 +6,18 @@ Red='\033[0;31m'          # Red
 Green='\033[0;32m'        # Green
 Yellow='\033[0;33m'       # Yellow
 
-BREW_PREFIX=$(brew --prefix)
+
 
 echo "2. Dnsmasq and Apache installation"
 if test $(which brew); then
-  if [ ! -f $BREW_PREFIX/sbin/dnsmasq ]; then
+  if [ ! -f $HOMEBREW_PREFIX/sbin/dnsmasq ]; then
     echo "$Green"
     echo "Install Dnsmasq to auto resolve to localhost$Color_Off"
     brew install dnsmasq
-    echo 'address=/.test/127.0.0.1' > $BREW_PREFIX/etc/dnsmasq.conf
+    echo 'address=/.test/127.0.0.1' > $HOMEBREW_PREFIX/etc/dnsmasq.conf
   fi
   
-  if [ ! -f $BREW_PREFIX/bin/httpd ]; then
+  if [ ! -f $HOMEBREW_PREFIX/bin/httpd ]; then
     echo "$Green" 
     echo "Install apache and process config files$Color_Off"
     sudo apachectl stop
@@ -33,24 +33,24 @@ if test $(which brew); then
     
     sudo brew services start httpd
 
-    mv $BREW_PREFIX/etc/httpd/httpd.conf $BREW_PREFIX/etc/httpd/httpd.conf.bak
-    mv $BREW_PREFIX/etc/httpd/extra/httpd-vhosts.conf $BREW_PREFIX/etc/httpd/extra/httpd-vhosts.conf.bak
+    mv $HOMEBREW_PREFIX/etc/httpd/httpd.conf $HOMEBREW_PREFIX/etc/httpd/httpd.conf.bak
+    mv $HOMEBREW_PREFIX/etc/httpd/extra/httpd-vhosts.conf $HOMEBREW_PREFIX/etc/httpd/extra/httpd-vhosts.conf.bak
 
-    cp -rf ~/mampro/config/httpd/httpd.conf $BREW_PREFIX/etc/httpd/httpd.conf
-    cp -rf ~/mampro/config/httpd/httpd-vhosts.conf $BREW_PREFIX/etc/httpd/extra/httpd-vhosts.conf
+    cp -rf ~/mampro/config/httpd/httpd.conf $HOMEBREW_PREFIX/etc/httpd/httpd.conf
+    cp -rf ~/mampro/config/httpd/httpd-vhosts.conf $HOMEBREW_PREFIX/etc/httpd/extra/httpd-vhosts.conf
 
-    sed -i '' "s/currentuser/$current_user/g" $BREW_PREFIX/etc/httpd/httpd.conf
-    sed -i '' "s#brew_prefix#$BREW_PREFIX#g" $BREW_PREFIX/etc/httpd/httpd.conf
+    sed -i '' "s/currentuser/$current_user/g" $HOMEBREW_PREFIX/etc/httpd/httpd.conf
+    sed -i '' "s#brew_prefix#$HOMEBREW_PREFIX#g" $HOMEBREW_PREFIX/etc/httpd/httpd.conf
 
-     sed -i '' "s/currentuser/$current_user/g" $BREW_PREFIX/etc/httpd/extra/httpd-vhosts.conf
+     sed -i '' "s/currentuser/$current_user/g" $HOMEBREW_PREFIX/etc/httpd/extra/httpd-vhosts.conf
 
   fi
 
   echo "$Green"
   echo "If permission warning occurred we need to run the following commands: $Color_Off"
   echo "$Red"
-  echo "sudo chown -R $(whoami) $BREW_PREFIX/share/man/man8"
-  echo "chmod u+w $BREW_PREFIX/share/man/man8"
+  echo "sudo chown -R $(whoami) $HOMEBREW_PREFIX/share/man/man8"
+  echo "chmod u+w $HOMEBREW_PREFIX/share/man/man8"
   echo "$Color_Off"
 else
   echo "$Red"

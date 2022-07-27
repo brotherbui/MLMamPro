@@ -6,20 +6,20 @@ Red='\033[0;31m'          # Red
 Green='\033[0;32m'        # Green
 Yellow='\033[0;33m'       # Yellow
 
-BREW_PREFIX=$(brew --prefix)
+
 
 
 
 echo "4. Install MariaDB"
 if test $(which brew); then
-  if [ ! -f $BREW_PREFIX/bin/mariadb ]; then
+  if [ ! -f $HOMEBREW_PREFIX/bin/mariadb ]; then
     brew install mariadb
     brew services start mariadb
     #Copy config 
-    mkdir -p $BREW_PREFIX/etc/my.cnf.d/
-    cp -rf ~/mampro/config/mariadb/disable-strict-mode.cnf $BREW_PREFIX/etc/my.cnf.d/
+    mkdir -p $HOMEBREW_PREFIX/etc/my.cnf.d/
+    cp -rf ~/mampro/config/mariadb/disable-strict-mode.cnf $HOMEBREW_PREFIX/etc/my.cnf.d/
 
-    sudo $BREW_PREFIX/bin/mariadb-secure-installation
+    sudo $HOMEBREW_PREFIX/bin/mariadb-secure-installation
   fi
   
   echo "$Yellow"

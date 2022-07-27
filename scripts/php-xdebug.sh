@@ -7,9 +7,9 @@ Yellow='\033[0;33m'       # Yellow
 app="$(basename "$0")"
 phpversion="7.4"
 action="$1"
-BREW_PREFIX=$(brew --prefix)
 
-xdebug_conf_path="$BREW_PREFIX/etc/php/$phpversion/conf.d"
+
+xdebug_conf_path="$HOMEBREW_PREFIX/etc/php/$phpversion/conf.d"
 xdebug_conf_file="ext-xdebug.ini"
 xdebug_conf=$xdebug_conf_path/$xdebug_conf_file
 
@@ -17,7 +17,7 @@ xdebug_conf=$xdebug_conf_path/$xdebug_conf_file
 RESTART="no"
 SHOWHELP="yes"
 STATUS="enabled"
-DIR="$BREW_PREFIX/opt/php@$phpversion"
+DIR="$HOMEBREW_PREFIX/opt/php@$phpversion"
 
 
 if [ ! -f "$xdebug_conf" ] && [ ! -f "$xdebug_conf.disabled" ]; then

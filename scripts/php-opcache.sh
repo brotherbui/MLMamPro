@@ -8,16 +8,16 @@ app="$(basename "$0")"
 phpversion="7.4"
 action="$1"
 
-BREW_PREFIX=$(brew --prefix)
 
-opcache_conf_path="$BREW_PREFIX/etc/php/$phpversion/conf.d"
+
+opcache_conf_path="$HOMEBREW_PREFIX/etc/php/$phpversion/conf.d"
 opcache_conf_file="ext-opcache.ini"
 opcache_conf=$opcache_conf_path/$opcache_conf_file
 
 STATUS="enabled"
 RESTART="no"
 SHOWHELP="yes"
-DIR="$BREW_PREFIX/opt/php@$phpversion"
+DIR="$HOMEBREW_PREFIX/opt/php@$phpversion"
 
 if [ -f "$opcache_conf" ] && [ -f "$opcache_conf.disabled" ]; then
   echo ""

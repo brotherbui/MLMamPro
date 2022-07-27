@@ -4,7 +4,7 @@ Red='\033[0;31m'          # Red
 Green='\033[0;32m'        # Green
 Yellow='\033[0;33m'       # Yellow
 
-BREW_PREFIX=$(brew --prefix)
+
 MAC_MODEL=$(sysctl hw.model | cut -f2- -d:)
 echo "5. Required applications installation"
 if test $(which brew); then

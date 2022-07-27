@@ -7,10 +7,10 @@ Yellow='\033[0;33m'       # Yellow
 
 ACTION="$1"
 
-BREW_PREFIX=$(brew --prefix)
+
 
 if [ "$ACTION" == "httpd" ]; then
-  code $BREW_PREFIX/etc/httpd/httpd.conf
+  code $HOMEBREW_PREFIX/etc/httpd/httpd.conf
 elif [ "$ACTION" == "vhosts" ]; then
-  code $BREW_PREFIX/etc/httpd/extra/httpd-vhosts.conf
+  code $HOMEBREW_PREFIX/etc/httpd/extra/httpd-vhosts.conf
 fi

@@ -6,7 +6,7 @@ Yellow='\033[0;33m'       # Yellow
 
 DB="$1"
 FILE="$2"
-BREW_PREFIX=$(brew --prefix)
+
 DIR=$(pwd)
 
 if [ -z "$DB" ]; then
@@ -20,7 +20,7 @@ elif [ -z "$FILE" ]; then
 else
   cd "$DIR"
 
-  if [ -d "$BREW_PREFIX/var/mysql/$DB" ]; then
+  if [ -d "$HOMEBREW_PREFIX/var/mysql/$DB" ]; then
     mariadb -u root -proot $DB < $FILE
     echo "$Green"
     echo "File: $FILE is imported to database: $DB $Color_Off"

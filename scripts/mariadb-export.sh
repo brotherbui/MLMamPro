@@ -5,7 +5,7 @@ Green='\033[0;32m'        # Green
 Yellow='\033[0;33m'       # Yellow
 
 DB="$1"
-BREW_PREFIX=$(brew --prefix)
+
 
 
 if [ -z "$DB" ]; then
@@ -13,7 +13,7 @@ if [ -z "$DB" ]; then
   echo "No database name given. Exit now! $Color_Off"
   exit 1
 else
-  if [ -d "$BREW_PREFIX/var/mysql/$DB" ]; then
+  if [ -d "$HOMEBREW_PREFIX/var/mysql/$DB" ]; then
     cd ~/Desktop
     mariadb-dump -u root -proot $DB | gzip -9 > $DB.sql.gz
     echo "$Green"

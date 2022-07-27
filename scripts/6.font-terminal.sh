@@ -5,11 +5,11 @@ Red='\033[0;31m'          # Red
 Green='\033[0;32m'        # Green
 Yellow='\033[0;33m'       # Yellow
 
-BREW_PREFIX=$(brew --prefix)
+
 
 echo "6. Jetbrains Font and Terminal profile installation"
 if test $(which brew); then
-  if [ ! -d "$BREW_PREFIX/Caskroom/font-jetbrains-mono-nerd-font" ]; then
+  if [ ! -d "$HOMEBREW_PREFIX/Caskroom/font-jetbrains-mono-nerd-font" ]; then
     brew tap homebrew/cask-fonts
     brew install font-jetbrains-mono-nerd-font
     #brew untap homebrew/cask-fonts #this will fail because we have installed font
